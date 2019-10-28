@@ -21,12 +21,12 @@ public class MorningStar {
 	        return seatMap;
 	    }
 	 
-	 public void displaySeats(){
+	 public static void displaySeats(){
 		 System.out.println(Thread.currentThread().getName()+" -->accesing "+name+" \n"+seatMap);
 		 System.out.println("No Of seat available in "+name + "  "+count);
 	 }
 	
-	 public synchronized void bookSeat(int choice){
+	 public static synchronized void bookSeat(int choice){
 		 int seatNumber = -1;
 		 Seat s = seatMap.get(choice);
 		 if(s.getAvailable()){
@@ -40,7 +40,7 @@ public class MorningStar {
 		 
 	 }
 	 
-	 private void printBoardingPass(int seatNumber) {
+	 private static void printBoardingPass(int seatNumber) {
 	        System.out.println("\nDate: " + new Date());
 	        Seat s = seatMap.get(seatNumber);
 	        String type = "";
